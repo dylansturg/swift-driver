@@ -890,6 +890,7 @@ extension Option {
   public static let symbolGraphAllowAvailabilityPlatforms: Option = Option("-symbol-graph-allow-availability-platforms", .separate, attributes: [.helpHidden, .frontend, .noInteractive, .supplementaryOutput], metaVar: "<platforms>", helpText: "Restrict availability metadata to the given platforms, e.g. 'macOS,Swift'")
   public static let symbolGraphBlockAvailabilityPlatforms: Option = Option("-symbol-graph-block-availability-platforms", .separate, attributes: [.helpHidden, .frontend, .noInteractive, .supplementaryOutput], metaVar: "<platforms>", helpText: "Remove the given platforms from symbol graph availability metadata, e.g. 'macOS,Swift'")
   public static let symbolGraphMinimumAccessLevel: Option = Option("-symbol-graph-minimum-access-level", .separate, attributes: [.helpHidden, .frontend, .noInteractive, .supplementaryOutput], metaVar: "<level>", helpText: "Include symbols with this access level or more when emitting a symbol graph")
+  public static let symbolGraphShortenOutputNames: Option = Option("-symbol-graph-shorten-output-names", .flag, attributes: [.helpHidden, .frontend, .noInteractive, .supplementaryOutput], helpText: "Shorten the symbol graph output file names by hashing the module name; outputs an additional JSON file with the map of hash to original name")
   public static let sysroot: Option = Option("-sysroot", .separate, attributes: [.frontend, .synthesizeInterface, .argumentIsPath], metaVar: "<sysroot>", helpText: "Native Platform sysroot")
   public static let S: Option = Option("-S", .flag, alias: Option.emitAssembly, attributes: [.frontend, .noInteractive], group: .modes)
   public static let tabWidth: Option = Option("-tab-width", .separate, attributes: [.noInteractive, .noBatch], metaVar: "<n>", helpText: "Width of tab character.", group: .codeFormatting)
@@ -1860,6 +1861,7 @@ extension Option {
       Option.symbolGraphAllowAvailabilityPlatforms,
       Option.symbolGraphBlockAvailabilityPlatforms,
       Option.symbolGraphMinimumAccessLevel,
+      Option.symbolGraphShortenOutputNames,
       Option.sysroot,
       Option.S,
       Option.tabWidth,
